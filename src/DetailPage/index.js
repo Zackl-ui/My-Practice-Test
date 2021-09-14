@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./detailPage.css";
+import { useParams } from "react-router-dom";
 const DetailPage = (props) => {
-  console.log(props);
+  let { id } = useParams();
+  const [detail, setDetails] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://thronesapi.com/api/v2/Characters/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setDetails([data]);
+      });
+  }, []);
   return (
     <div className="container-detail">
-      <div className="detail">
-        <img
-          src={props.history.location.user.imageUrl}
-          alt={props.history.location.user.image}
-        />
-        <h2>Family:</h2>
-        <h3>{props.history.location.user.family}</h3>
-        <h2>First Name:</h2>
-        <h4>{props.history.location.user.firstName}</h4>
-        <h2>Full Name:</h2>
-        <h4>{props.history.location.user.fullName}</h4>
-        <h2>Last Name:</h2>
-        <h4>{props.history.location.user.lastName}</h4>
-      </div>
+      {detail.map((item) => {
+        return (
+          <div className="detail">
+            <img src={item.imageUrl} alt={item.image} />
+            <h2>Family:</h2>
+            <h3>{item.family}</h3>
+            <h2>First Name:</h2>
+            <h4>{item.firstName}</h4>
+            <h2>Full Name:</h2>
+            <h4>{item.fullName}</h4>
+            <h2>Last Name:</h2>
+            <h4>{item.lastName}</h4>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -58,7 +58,7 @@ const Home = () => {
                 <span>{user.lastName}</span>
               </div>
               <div className="button">
-                <Link to={{ pathname: `/detail-page/${user.id}`, user }}>
+                <Link to={{ pathname: `/detail-page/${user.id}` }}>
                   View Details
                 </Link>
               </div>
