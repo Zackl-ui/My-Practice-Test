@@ -75,7 +75,10 @@
   width: 100%;
 }
 .container-detail .detail img {
+  width: 250px;
   margin-bottom: 20px;
+  height: 250px;
+  object-fit: cover;
 }
 .container-detail .detail-list {
   width: 50%;
