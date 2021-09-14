@@ -1,7 +1,6 @@
 .container {
-  max-width: 80%;
-  margin: 0 auto;
   padding-bottom: 50px;
+  background-color: #000;
 }
 .container h2 {
   font-size: 50px;
@@ -11,10 +10,15 @@
   margin: 0;
   padding: 50px 0px 10px;
 }
+.container .content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .boxes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .boxes .box {
   width: 25%;
@@ -23,6 +27,10 @@
   margin-top: 50px;
   background-color: #fff;
   border-radius: 0.6rem;
+  margin-right: 25px;
+}
+.boxes .box:nth-child(3n) {
+  margin-right: 0px;
 }
 .box .button {
   display: flex;

@@ -32,39 +32,41 @@ const Home = () => {
   };
   return (
     <div className="container">
-      <h2>Game of Thrones</h2>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="type for search"
-          onChange={handleChange}
-        />
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </div>
-      <div className="boxes">
-        {filteredUsers.map((user, index) => {
-          return (
-            <div className="box" key={index}>
-              <div className="row">
-                <h3>First Name:</h3>
-                <span>{user.firstName}</span>
+      <div className="content">
+        <h2>Game of Thrones</h2>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="type for search"
+            onChange={handleChange}
+          />
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <div className="boxes">
+          {filteredUsers.map((user, index) => {
+            return (
+              <div className="box" key={index}>
+                <div className="row">
+                  <h3>First Name:</h3>
+                  <span>{user.firstName}</span>
+                </div>
+                <div className="row">
+                  <h3>Last Name:</h3>
+                  <span>{user.lastName}</span>
+                </div>
+                <div className="row">
+                  <h3>Full Name:</h3>
+                  <span>{user.fullName}</span>
+                </div>
+                <div className="button">
+                  <Link to={{ pathname: `/detail-page/${user.id}` }}>
+                    View Details
+                  </Link>
+                </div>
               </div>
-              <div className="row">
-                <h3>Last Name:</h3>
-                <span>{user.fullName}</span>
-              </div>
-              <div className="row">
-                <h3>Full Name:</h3>
-                <span>{user.lastName}</span>
-              </div>
-              <div className="button">
-                <Link to={{ pathname: `/detail-page/${user.id}` }}>
-                  View Details
-                </Link>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
