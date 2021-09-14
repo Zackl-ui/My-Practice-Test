@@ -12,8 +12,8 @@
   right: 0;
   font-size: 15px;
   line-height: 21px;
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: #fff;
   padding: 15px 20px;
   text-decoration: none;
   border-radius: 0.6rem 0.6rem 0.6rem 0.6rem;
@@ -21,9 +21,9 @@
   border: 1px solid transparent;
 }
 .container-detail .detail a.back:hover {
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #000;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
 }
 .container-detail .detail {
   padding: 30px 50px;
