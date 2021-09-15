@@ -94,3 +94,12 @@
   top: 17px;
   font-size: 20px;
 }
+@media (max-width: 1580px) {
+  .boxes .box {
+    width: 24%;
+  }
+  .container .content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}

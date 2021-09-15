@@ -87,3 +87,11 @@
 .container-detail .detail-list:nth-child(2n) {
   text-align: right;
 }
+@media (max-width: 1580px) {
+  .container-detail {
+    padding-top: 50px;
+  }
+  .container-detail .detail {
+    padding: 20px 50px;
+  }
+}
